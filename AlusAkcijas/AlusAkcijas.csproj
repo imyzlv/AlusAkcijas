@@ -16,7 +16,7 @@
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.alusakcijas</ApplicationId>
-		<ApplicationIdGuid>7B95B000-38D8-437D-AF68-07B83B15A520</ApplicationIdGuid>
+		<ApplicationIdGuid>8FC9B1B8-E531-48C0-9177-A9D9A89DDA34</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -30,29 +30,4 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-		<MauiFont Include="Resources\Fonts\*" />
-
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="HtmlAgilityPack" />
-	  <None Remove="Services\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <PackageReference Include="HtmlAgilityPack" Version="1.11.43" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Services\" />
-	</ItemGroup>
 </Project>
