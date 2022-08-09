@@ -48,11 +48,13 @@
 	<ItemGroup>
 	  <None Remove="HtmlAgilityPack" />
 	  <None Remove="Services\" />
+	  <None Remove="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="HtmlAgilityPack" Version="1.11.43" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
+	  <Folder Include="Models\" />
 	</ItemGroup>
 </Project>

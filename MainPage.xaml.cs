@@ -14,7 +14,11 @@ public partial class MainPage : ContentPage
 		count++;
 		//SemanticScreenReader.Announce(CounterBtn.Text);
 
-		AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
+		var beerList = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
+		foreach(var beerItem in beerList)
+        {
+			Console.WriteLine(beerItem.Name);
+        }
 	}
 }
 
