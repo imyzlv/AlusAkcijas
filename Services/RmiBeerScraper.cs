@@ -31,9 +31,15 @@ namespace AlusAkcijas.Services
                         // do some ugly cleanup of the pricing value
                         price = price.TrimStart().TrimEnd();
                         price = price.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace(" ", "");
+                        // remove misc symbols from the end of the string
                         price = price.Remove(price.Length - 6);
-                        beerCost = double.Parse(price) / 100;
+                        bool success = double.TryParse(price, out beerCost);
+                        if (!success)
+                        {
+                            beerCost = -1;
+                        }
                     }
+
                     // load dicounted prices
                     double beerCostOld = 0;
                     if (item.SelectSingleNode(".//div[@class='old-price-tag card__old-price']") != null)
@@ -45,7 +51,11 @@ namespace AlusAkcijas.Services
                         oldPrice = oldPrice.Replace(",", "");
                         //remove the EUR mark from the end
                         oldPrice = oldPrice.Remove(oldPrice.Length - 1);
-                        beerCostOld = double.Parse(oldPrice) / 100;
+                        bool success = double.TryParse(oldPrice, out beerCostOld);
+                        if (!success)
+                        {
+                            beerCostOld = -1;
+                        }
                     }
 
                     if (beerCostOld > 0)
