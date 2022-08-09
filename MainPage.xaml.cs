@@ -20,7 +20,7 @@ public partial class MainPage : ContentPage
 
 		//SemanticScreenReader.Announce(CounterBtn.Text);
 
-		AlusAkcijas.Services.BeerScraper.GetRimiBeers();
+		AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
 	}
 }
 

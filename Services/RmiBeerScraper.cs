@@ -3,12 +3,12 @@ using HtmlAgilityPack;
 
 namespace AlusAkcijas.Services
 {
-    public class BeerScraper
+    public class RimiBeerScraper
     {
         public static async void GetRimiBeers()
         {
             HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
-            int pageCount = await RimiPageCount();
+            int pageCount = await RimiTotalBeersPageCount();
             for (int i = 1; i <= pageCount; i++)
             {
                 string url = "https://www.rimi.lv/e-veikals/lv/produkti/alkoholiskie-dzerieni/alus/c/SH-1-12?page=" + i.ToString() + "&pageSize=100&query=%3Arelevance%3AallCategories%3ASH-1-12%3AassortmentStatus%3AinAssortment";
@@ -59,7 +59,7 @@ namespace AlusAkcijas.Services
             }
         }
 
-        public static async Task<int> RimiPageCount()
+        public static async Task<int> RimiTotalBeersPageCount()
         {
             int pageCount = 0;
             HtmlWeb web = new HtmlWeb();
