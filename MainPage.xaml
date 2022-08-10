@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlusAkcijas.MainPage"
-             Title="All the beers \m/"
+             Title="Alus aktcijas"
              xmlns:local="clr-namespace:AlusAkcijas">
 			 
     <ScrollView>
@@ -12,10 +12,10 @@
                     <DataTemplate>
                 <Grid ColumnDefinitions=".5*,.5*"
                       RowDefinitions="60,30,30,Auto"
-                     ColumnSpacing="10"
+                     ColumnSpacing="4"
                      RowSpacing="2"
-                     Padding="10">
-                            
+                     Padding="15">
+
                             <Label Text="{Binding Name}"
                                    Grid.Column="0"
                                    FontSize="14"
@@ -25,14 +25,32 @@
                                    Grid.RowSpan="4"
                                    Grid.Column="1"
                                 Source="{Binding ImageUrl}"/>
+
+                            <Label Text="Cena:"
+                                   Grid.Row="1"/>
+
                             <Label Text="{Binding Price}"
                                    Grid.Column="0"
                                    Grid.Row="1"
+                                   HorizontalTextAlignment="Center"
                                    TextColor="Red"/>
+
+                            <Label Text="           €"
+                                   Grid.Row="1"
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="Red"/>
+
+                            <Label Text="Vecā cena:"
+                                   Grid.Row="2"/>
 
                             <Label Text="{Binding OldPrice}"
                                    Grid.Row="2"
-                                   FontAttributes="Bold"/>
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label Text="           €"
+                                   Grid.Row="2"
+                                   HorizontalTextAlignment="Center"/>
 
                 </Grid>
                         </DataTemplate>
