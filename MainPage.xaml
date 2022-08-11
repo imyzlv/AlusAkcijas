@@ -7,6 +7,13 @@
 			 
     <ScrollView>
         <VerticalStackLayout>
+            <Button 
+                x:Name="CounterBtn"
+                Text="Load beers"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
             <CollectionView x:Name="beerView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

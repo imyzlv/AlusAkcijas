@@ -13,17 +13,14 @@ public partial class MainPage : ContentPage
 		//SemanticScreenReader.Announce(CounterBtn.Text);
 
 		var beerList = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
-		foreach(var item in beerList)
-        {
-			Console.WriteLine(item.Name);
-        }
+		beerView.ItemsSource = beerList;
 	}
 
 	protected async override void OnAppearing()
 	{
 		base.OnAppearing();
-		var beers = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
-		beerView.ItemsSource = beers;
+		//var beers = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
+		//beerView.ItemsSource = beers;
 	}
 }
 
