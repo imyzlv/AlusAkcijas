@@ -12,7 +12,8 @@ public partial class MainPage : ContentPage
 	{
 		//SemanticScreenReader.Announce(CounterBtn.Text);
 
-		var beerList = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
+		//var beerList = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
+		var beerList = await AlusAkcijas.Services.BarboraBeerScraper.GetBarboraBeers();
 		beerView.ItemsSource = beerList;
 	}
 
