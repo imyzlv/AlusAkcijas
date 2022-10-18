@@ -6,10 +6,13 @@ namespace AlusAkcijas.Services
 {
     public class BarboraBeerScraper
     {
-        //TODO - refactor the code to use config parameter for either Barbora or Rimi
+        //TODO
+        //1) refactor the code to use config parameter for either Barbora or Rimi
+        //2) get page count from Barbora
+        //3) Figure out how to get only discounted beers and ommit others to speed up the process.
+
         public static async Task<IEnumerable<Beer>> GetBarboraBeers()
         {
-            int iterator = 0;
             HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             List<Beer> beer = new List<Beer>();
             //light beer url
@@ -35,9 +38,7 @@ namespace AlusAkcijas.Services
                     price = price.TrimStart().TrimEnd();
                     price = price.Replace("\n", "").Replace("\r", "").Replace("\t", "").Replace(" ", "").Replace(",", "").Replace("€", "");
                     // remove misc symbols from the end of the string
-                    //price = price.Remove(price.Length - 6);
                     beerCost = double.Parse(price) / 100;
-                    //Console.WriteLine(beerCost);
                 }
 
                 // load dicounted prices
@@ -60,7 +61,7 @@ namespace AlusAkcijas.Services
                     imgUrl = iUrl.ToString();
                 }
 
-
+                //Check, if it's in fact discounted beer. Only then add it to the list
                 if (beerCostOld > 0)
                 {
                     beer.Add(new Beer
