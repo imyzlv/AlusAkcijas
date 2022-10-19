@@ -61,6 +61,7 @@ namespace AlusAkcijas.Services
                         imgUrl = iUrl.ToString();
                     }
 
+                    //add to the list, if the beer is actually discounted
                     if (beerCostOld > 0)
                     {
                         beer.Add(new Beer

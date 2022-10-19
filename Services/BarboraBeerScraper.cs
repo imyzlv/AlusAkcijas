@@ -7,7 +7,7 @@ namespace AlusAkcijas.Services
     public class BarboraBeerScraper
     {
         //TODO
-        //1) refactor the code to use config parameter for either Barbora or Rimi
+        //1) refactor the code to use config parameter for either Barbora or Rimi - or Top?
         //2) get page count from Barbora
         //3) Figure out how to get only discounted beers and ommit others to speed up the process.
 
