@@ -20,8 +20,8 @@ public partial class MainPage : ContentPage
 	protected async override void OnAppearing()
 	{
 		base.OnAppearing();
-		//var beers = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
-		//beerView.ItemsSource = beers;
+		var beers = await AlusAkcijas.Services.RimiBeerScraper.GetRimiBeers();
+		beerView.ItemsSource = beers;
 	}
 }
 
